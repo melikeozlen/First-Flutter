@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:todo_app/constansts/colors.dart';
 
 void main() {
   runApp(const WidgetDetail());
@@ -24,7 +26,12 @@ class WidgetDetailState extends State<WidgetDetail> {
             children: [
               Text(
                 "Count: " + count.toString(),
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 10,
+                    backgroundColor: HexColor(backgroundColors),
+                    color: HexColor(primaryColor)),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -52,7 +59,12 @@ class WidgetDetailState extends State<WidgetDetail> {
               ),
               Visibility(
                 visible: visible,
-                child: const Text("Count cannot less than 0"),
+                child: const Text(
+                  "Count cannot less than 0",
+                  style: TextStyle(
+                      backgroundColor: Colors.red,
+                      color: Color.fromARGB(255, 255, 255, 255)),
+                ),
               )
             ],
           ),
